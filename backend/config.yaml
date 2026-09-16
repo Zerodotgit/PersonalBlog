@@ -1,0 +1,25 @@
+# 服务监听地址
+server:
+  addr: ":8080"
+
+# 数据库配置：开发环境使用 sqlite（开箱即用，无需安装 MySQL）；
+# 生产环境请改为 mysql 并填写真实 DSN。
+database:
+  # driver 取值：sqlite | mysql
+  driver: "sqlite"
+  # --- SQLite（开发默认）---
+  # 文件路径，可带 pragma 参数以减少并发锁问题
+  dsn: "data/blog.db?_pragma=journal_mode(WAL)&_pragma=busy_timeout(5000)&_pragma=foreign_keys(1)"
+  # --- MySQL（生产环境示例，取消注释并切换 driver 为 mysql）---
+  # driver: "mysql"
+  # dsn: "root:yourpassword@tcp(127.0.0.1:3306)/personal_blog?charset=utf8mb4&parseTime=True&loc=Local"
+
+# JWT 配置
+jwt:
+  secret: "please-change-this-secret-in-production"
+  expire_hours: 24
+
+# 初始管理员账号，首次启动时会写入数据库（bcrypt 加密）
+admin:
+  username: "admin"
+  password: "admin123"

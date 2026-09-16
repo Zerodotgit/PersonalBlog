@@ -1,0 +1,64 @@
+# ===== Go 后端 =====
+# 编译产物
+backend/bin/
+backend/*.exe
+backend/server
+backend/server.exe
+*.test
+*.out
+# Go 工作区/缓存
+go.work
+go.work.sum
+# vendor 目录（按需启用 go mod vendor 时再取消注释）
+# backend/vendor/
+
+# 含密钥的本地配置覆盖（保留 config.yaml 作为模板，真实密钥请放本地覆盖文件）
+backend/config.local.yaml
+backend/.env
+.env
+.env.*
+
+# SQLite 开发数据库文件（开发环境数据，不入库）
+backend/data/
+backend/*.db
+backend/*.db-journal
+backend/*.db-wal
+backend/*.db-shm
+
+# ===== 前端 (Node / Vite) =====
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+frontend/.vite/
+# 本地证书/密钥
+frontend/*.pem
+frontend/*.key
+
+# ===== 日志 =====
+*.log
+logs/
+
+# ===== 编辑器 / IDE =====
+.idea/
+.vscode/
+*.suo
+*.user
+*.swp
+*.swo
+*~
+# Trae 自身生成的文档/计划目录（按需保留则删除本行）
+.trae/
+
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# ===== 其他 =====
+node_modules/
+.cache/
+temp/
+tmp/
