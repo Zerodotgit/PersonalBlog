@@ -2,7 +2,7 @@
   <div class="blog-app">
     <header class="nav">
       <div class="nav-inner">
-        <router-link to="/" class="logo">个人博客</router-link>
+        <router-link to="/" class="logo">零点的小破绽</router-link>
         <nav class="links">
           <router-link to="/">首页</router-link>
           <router-link to="/about">关于</router-link>
@@ -23,7 +23,8 @@
       <router-view />
     </main>
     <footer class="footer">
-      <span>© {{ year }} 个人博客 · Powered by Go + Vue</span>
+      <span>© {{ year }} 零点的小破绽 · 版权所有</span>
+      <a class="beian" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">渝ICP备2026023061号-1</a>
     </footer>
   </div>
 </template>
@@ -156,10 +157,21 @@ const year = computed(() => new Date().getFullYear())
   padding: 32px 20px;
 }
 .footer {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   padding: 20px;
   color: var(--color-text-light);
   font-size: 13px;
   border-top: 1px solid var(--color-border);
+}
+.footer .beian {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer .beian:hover {
+  color: var(--color-primary);
 }
 </style>
